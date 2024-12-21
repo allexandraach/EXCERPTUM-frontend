@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+nav {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    font-size: 115%;
+    background-color: #df640c;
+  }
+}
+
+.blink_me:hover {
+  animation: none;
+}
+
+.blink_me_green {
+  animation: blinker2 1s linear infinite;
+}
+
+@keyframes blinker2 {
+  50% {
+    font-size: 115%;
+    background-color: #009c39;
+  }
+}
+
+.blink_me_green:hover {
+  animation: none;
+}
+
+table.oportunities-table {
+  display: inline-block;
+}
+
+button,
+a {
+  cursor: pointer !important;
+}
