@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 
-nav {
+nav,
+footer {
   font-family: 'Space Grotesk', sans-serif;
+}
+
+::selection {
+  background-color: #a10872;
+  color: white;
 }
 
 .blink_me {

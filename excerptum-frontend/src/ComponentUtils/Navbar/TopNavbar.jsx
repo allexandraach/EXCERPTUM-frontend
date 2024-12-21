@@ -24,7 +24,7 @@ export function TopNavbar({ children, navLinks }) {
     return (
       <NavLink
         className={({ isActive }) =>
-          `flex items-center justify-center self-stretch hover:bg-primary px-4 ${isActive ? 'bg-primary' : ''}`}
+          `flex items-center justify-center self-stretch hover:bg-primary trasition duration-300 px-4 ${isActive ? 'bg-primary' : ''}`}
         key={index}
         to={element.link}
         onClick={closeMenu}
@@ -97,7 +97,7 @@ export function TopNavbar({ children, navLinks }) {
             right-0
             shadow-md
             ${menuState ? 'opacity-1 translate-y-0' : 'opacity-0 invisible -translate-y-full'} 
-            text-white
+             text-navbar_font_color
             w-1/3
             bg-navbar_bg
             `}>
