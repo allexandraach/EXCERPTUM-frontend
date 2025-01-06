@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-// import { AiOutlineProfile } from "react-icons/ai";
-// import { AiFillProfile } from "react-icons/ai";
-import { FaBookOpen } from "react-icons/fa6";
-import { BiSolidBookAlt } from "react-icons/bi";
+// import { AiOutlineProfile } from 'react-icons/ai';
+// import { AiFillProfile } from 'react-icons/ai';
+import { FaBookOpen } from 'react-icons/fa6';
+import { BiSolidBookAlt } from 'react-icons/bi';
 // import { useAuth } from '../../app/context/Auth.context';
 
 export function TopNavbar({ children, navLinks }) {
@@ -35,9 +35,8 @@ export function TopNavbar({ children, navLinks }) {
   });
 
   return (
-    <div className="pageContainer sticky top-0 z-50">
-      <div
-        className={`
+    <div className='pageContainer sticky top-0 z-50'>
+      <div className={`
             flex
             flex-row
             justify-between
@@ -53,16 +52,16 @@ export function TopNavbar({ children, navLinks }) {
             h-14
             `}>
 
-        <Link to="/" className="text-3xl font-['Satisfy'] ml-2 mt-1.5">
+        <Link to='/' className='text-3xl font-[Satisfy] ml-2 mt-1.5'>
           Excerptum
         </Link>
 
-        <nav className={`linkWrapper flex h-full items-center max-md:hidden`}>
+        <nav className='linkWrapper flex h-full items-center max-md:hidden'>
           {navElement}
         </nav>
 
         <div
-          className="
+          className='
                iconMenuWrapper
                md:hidden
                cursor-pointer
@@ -73,13 +72,13 @@ export function TopNavbar({ children, navLinks }) {
                hover:bg-[#ffffff18]
                transition-colors
                duration-300
-               "
+               '
           onClick={handleState}>
           {navLinks ? (
             menuState ? (
-              <FaBookOpen size={25} className="transition-transform duration-300 transform rotate-0" />
+              <FaBookOpen size={25} className='transition-transform duration-300 transform rotate-0' />
             ) : (
-              <BiSolidBookAlt size={25} className="transition-transform duration-300 transform rotate-180" />
+              <BiSolidBookAlt size={25} className='transition-transform duration-300 transform rotate-180' />
             )
           ) : null}
         </div>
@@ -104,7 +103,7 @@ export function TopNavbar({ children, navLinks }) {
         {navElement}
       </nav>
 
-      <div className="childrenContainer">{children}</div>
+      <div className='childrenContainer'>{children}</div>
     </div>
   );
 }

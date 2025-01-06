@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet';
-
 import { Container } from '../ComponentUtils/BoxComponents/Container';
 
 const Home = () => {
@@ -8,7 +7,7 @@ const Home = () => {
         <Container>
             <Helmet>
                 <title>Excerptum | Home</title>
-                <meta name="description" content="Excerptum | Home" />
+                <meta name='description' content='Excerptum | Home' />
             </Helmet>
         </Container>
     )

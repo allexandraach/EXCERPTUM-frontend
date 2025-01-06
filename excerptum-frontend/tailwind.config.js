@@ -6,12 +6,22 @@ import formsPlugin from '@tailwindcss/forms';
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
+    borderRadius: {
+      'none': '0',
+      'sm': '0.125rem',
+      'default': '0.25rem',
+      'md': '0.375rem',
+      'lg': '0.5rem',
+      'full': '9999px',
+      'large': '12px',
+      'custom': '3.125rem',
+    },
     extend: {
       colors: {
         navbar_bg: '#653434',
-        navbar_font_color: '#faebd7',
+        navbar_font_color: '#fbefdf',
         primary: '#a10872',
-        secondary: '#f97316',
+        secondary: '#a10872',
         gray_shadow: '#a0a1a2',
         primary_hover: '#009c39',
         secondary_hover: '#df640c',
