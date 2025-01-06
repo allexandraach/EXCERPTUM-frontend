@@ -17,14 +17,6 @@ const SignUp = () => {
         mode: 'onChange' // Enables validation as you type
     });
 
-    // TEST DATA ----------------------------------------------------------------
-
-    const ToS = 'I have read and agreed with the Terms of Service';
-    const GDPR = 'I have read and agreed with the Privacy Policy';
-    const newsletter = 'I want to subscribe to the newsletter';
-
-    // TEST DATA ----------------------------------------------------------------
-
     return (
         <Container extraClass="flex justify-center items-center bg-cover bg-center bg-[url('https://img.freepik.com/premium-photo/collection-old-newspapers-objects_154730-277.jpg?w=1380')]">
             <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -33,8 +25,8 @@ const SignUp = () => {
                 <meta name='description' content='Excerptum | SignUp' />
             </Helmet>
 
-            <form className="relative flex w-full md:w-1/2 lg:w-1/3 rounded-xl p-8 bg-navbar_font_color bg-opacity-80 shadow-lg">
-                <h1 className="absolute -top-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 bg-[#80065b] text-white px-4 py-2 rounded-md shadow-md">
+            <form className="relative flex w-full md:w-1/2 lg:w-1/3 rounded-md p-8 bg-soft_beige bg-opacity-80 shadow-lg">
+                <h1 className="absolute -top-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 bg-magenta text-white px-4 py-2 rounded-md shadow-md">
                     <span className="font-serif text-lg">Sign Up</span>
                 </h1>
 
@@ -42,7 +34,7 @@ const SignUp = () => {
                     <Input
                         containerClass="w-full"
                         labelClass="pl-3"
-                        inputClass="w-full p-3 border rounded-md focus:outline-none focus:ring-1 focus:ring-[#80065b] transition duration-300"
+                        inputClass="w-full p-3"
                         placeholder="Please enter your name"
                         type="text"
                         name="name"
@@ -67,7 +59,7 @@ const SignUp = () => {
                     <Input
                         containerClass="w-full"
                         labelClass="pl-3"
-                        inputClass="w-full p-3 border rounded-md focus:outline-none focus:ring-1 focus:ring-[#80065b] transition duration-300"
+                        inputClass="w-full p-3"
                         placeholder="Please enter your username"
                         type="text"
                         name="username"
@@ -93,7 +85,7 @@ const SignUp = () => {
                         <Input
                             containerClass="w-full"
                             labelClass="pl-3"
-                            inputClass="w-full p-3 border rounded-md focus:outline-none focus:ring-1 focus:ring-[#80065b] transition duration-300"
+                            inputClass="w-full p-3"
                             placeholder="Please enter your password"
                             type="password"
                             name="password"
@@ -118,7 +110,7 @@ const SignUp = () => {
                         <Input
                             containerClass="w-full"
                             labelClass="pl-3"
-                            inputClass="w-full p-3 border rounded-md focus:outline-none focus:ring-1 focus:ring-[#80065b] transition duration-300"
+                            inputClass="w-full p-3"
                             placeholder="Please enter your password again"
                             type="password"
                             name="repeat-password"
@@ -147,7 +139,9 @@ const SignUp = () => {
                             id="ToS"
                             keyText="ToS"
                             name="ToS"
-                            label={ToS}
+                            label='I have read and agreed with the'
+                            link='/policies/terms-and-conditions'
+                            linkText='Terms and Conditions'
                             value={true}
                             validation={{ required: 'Agreeing to our Terms of Service is compulsory' }}
                             register={register}
@@ -157,7 +151,9 @@ const SignUp = () => {
                             id="GDPR"
                             keyText="GDPR"
                             name="GDPR"
-                            label={GDPR}
+                            label='I have read and agreed with the'
+                            link='/policies/privacy'
+                            linkText='Privacy Policy'
                             value={true}
                             validation={{ required: 'Agreeing with our GDPR policy is compulsory' }}
                             register={register}
@@ -167,7 +163,7 @@ const SignUp = () => {
                             id="newsletter"
                             keyText="newsletter"
                             name="newsletter"
-                            label={newsletter}
+                            label='I want to subscribe to the newsletter'
                             value={true}
                             register={register}
                             errors={errors}
@@ -177,7 +173,7 @@ const SignUp = () => {
                     <input
                         type="submit"
                         value="Register"
-                        className="px-4 py-2 w-1/3 text-lg self-center rounded-md text-white bg-[#80065b] hover:bg-[#70054f] transition duration-300 border shadow-lg cursor-pointer"
+                        className="px-4 py-2 w-1/3 text-lg self-center rounded-md text-white bg-magenta hover:bg-dark_magenta transition duration-300 border-dark_magenta shadow-lg cursor-pointer"
                     />
                 </div>
             </form>

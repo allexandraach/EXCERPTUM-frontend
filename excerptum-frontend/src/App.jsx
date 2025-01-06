@@ -1,6 +1,6 @@
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
 import { TopNavbar } from './ComponentUtils/Navbar/TopNavbar';
 import Home from './Pages/Home';
@@ -20,7 +20,9 @@ function App() {
   return (
     <div className='App min-h-screen relative'>
       <BrowserRouter>
-        <TopNavbar navLinks={navLinks} />
+        <TopNavbar
+          navLinks={navLinks}
+        />
         <main>
           <Routes>
             {/* Public routes */}

@@ -24,7 +24,7 @@ export function TopNavbar({ children, navLinks }) {
     return (
       <NavLink
         className={({ isActive }) =>
-          `flex items-center justify-center self-stretch hover:bg-primary trasition duration-300 px-4 ${isActive ? 'bg-primary' : ''}`}
+          `flex items-center justify-center self-stretch hover:bg-magenta trasition duration-300 px-4 ${isActive ? 'bg-magenta' : ''}`}
         key={index}
         to={element.link}
         onClick={closeMenu}
@@ -45,9 +45,9 @@ export function TopNavbar({ children, navLinks }) {
             relative
             z-30
             items-center
-            bg-navbar_bg
-            text-navbar_font_color
-            w-screen 
+            bg-chestnut_brown
+            text-soft_beige
+            
             shadow-lg
             h-14
             `}>
@@ -92,13 +92,12 @@ export function TopNavbar({ children, navLinks }) {
             z-10
             absolute
             rounded
-            border-t-2
             right-0
             shadow-md
             ${menuState ? 'opacity-1 translate-y-0' : 'opacity-0 invisible -translate-y-full'} 
-             text-navbar_font_color
+             text-soft_beige
             w-1/3
-            bg-navbar_bg
+            bg-chestnut_brown
             `}>
         {navElement}
       </nav>

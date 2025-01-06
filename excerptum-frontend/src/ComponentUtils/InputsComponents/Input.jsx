@@ -26,7 +26,7 @@ export function Input({
         value={value}
         type={type}
         name={name}
-        className={`${inputClass} p-[0.8rem] border-gray-300 hover:border-gray-600 focus:ring-secondary focus:border-secondary rounded-custom shadow-sm`}
+        className={`border-gray-300 hover:border-gray-600 focus:ring-wine focus:border-wine rounded-md shadow-sm ${inputClass}`}
         placeholder={placeholder}
         id={id}
         key={id}

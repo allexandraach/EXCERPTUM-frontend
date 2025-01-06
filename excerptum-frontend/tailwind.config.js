@@ -18,14 +18,16 @@ export default {
     },
     extend: {
       colors: {
-        navbar_bg: '#653434',
-        navbar_font_color: '#fbefdf',
-        primary: '#a10872',
-        secondary: '#a10872',
+        // nav bg color
+        chestnut_brown: '#653434',
+        // #65344d
+        // bav font color
+        soft_beige: '#fbefdf',
+        magenta: '#a10872',
+        dark_magenta: '#80065b',
+        dark_magenta_hover: '#70054f',
+        wine: '#65344d',
         gray_shadow: '#a0a1a2',
-        primary_hover: '#009c39',
-        secondary_hover: '#df640c',
-        ternary_hover: '#9c0505f0',
         gray_hover: '#848a94',
         modal_bg: '#0303032e',
       },
