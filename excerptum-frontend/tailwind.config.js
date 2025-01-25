@@ -31,9 +31,12 @@ export default {
         gray_hover: '#848a94',
         modal_bg: '#0303032e',
       },
+      backgroundImage: {
+        home_hero_img_1: "url('./src/images/home/hero_img_1.png')",
+        home_hero_img_2: "url('./src/images/home/hero_img_2.png')"
+      },
       fontFamily: {
-        // navbar_font: ['Inknut Antiqua', 'serif'],
-        // logo_font: ['Satisfy', 'cursive'],
+        satisfy: ['Satisfy', 'cursive']
       },
       maxWidth: {
         'navItem-width': '110px',

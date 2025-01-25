@@ -38,8 +38,9 @@ export function Input({
         <div className="flex pl-2">
           <MdErrorOutline
             size={20}
+            className="flex-shrink-0"
           />
-          <p className={`ml-2 text-sm`}>{errors[name].message}</p>
+          <p className='ml-2 text-sm'>{errors[name].message}</p>
         </div>
       }
     </div>

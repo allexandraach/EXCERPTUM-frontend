@@ -24,7 +24,7 @@ const Footer = () => {
                     Privacy
                 </Link>
             </div>
-            <p className='ml-8 md:ml-0 text-sm text-wrap'> &copy; Excerptum 2024 | All rights reserved </p>
+            <p className='ml-8 md:ml-0 text-sm text-wrap'> &copy; Excerptum 2025 | All rights reserved </p>
         </footer>
     )
 }

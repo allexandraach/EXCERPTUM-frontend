@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 /* navbar font */
 @import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300&display=swap');
-/* site font */
-/* @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap'); */
-
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap');
 
-/* main {
-  font-family: 'Space Grotesk', sans-serif;
-} */
 main {
   font-family: 'Crimson Pro', serif;
 }

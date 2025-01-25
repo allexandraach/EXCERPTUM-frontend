@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Helmet } from 'react-helmet';
 import { ToastContainer, toast } from 'react-toastify';
@@ -18,7 +19,7 @@ const SignUp = () => {
     });
 
     return (
-        <Container extraClass="flex justify-center items-center bg-cover bg-center bg-[url('https://img.freepik.com/premium-photo/collection-old-newspapers-objects_154730-277.jpg?w=1380')]">
+        <Container extraClass="min-h-screen py-10 flex justify-center items-center  bg-cover bg-center bg-[url('https://img.freepik.com/premium-photo/collection-old-newspapers-objects_154730-277.jpg?w=1380')]">
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <Helmet>
                 <title>Excerptum | SignUp</title>
@@ -30,34 +31,36 @@ const SignUp = () => {
                     <span className="font-serif text-lg">Sign Up</span>
                 </h1>
 
-                <div className="flex flex-col w-full my-4 space-y-4">
+                <div className="flex flex-col w-full space-y-4">
                     <Input
-                        containerClass="w-full"
+                        containerClass="w-full pb-0"
                         labelClass="pl-3"
                         inputClass="w-full p-3"
-                        placeholder="Please enter your name"
-                        type="text"
-                        name="name"
-                        id="name"
+                        placeholder="Please enter your e-mail address"
+                        type="email"
+                        name="email"
+                        id="email"
                         label="E-mail"
                         validation={{
-                            required: 'Field is compulsory', validate: (value) => {
-                                if (!/^[0-9]*$/.test(value)) return 'Format invalid. Vă rugăm să introduceți numai cifre';
+                            required: 'Field is compulsory',
+                            pattern: {
+                                value: /^\S+@\S+\.\S+$/,
+                                message: 'E-mail address is not valid'
                             },
                             minLength: {
-                                value: 2,
-                                message: 'Name is too short'
+                                value: 6,
+                                message: 'E-mail address is too short'
                             },
                             maxLength: {
                                 value: 50,
-                                message: 'Name is too long'
+                                message: 'E-mail address is too long'
                             }
                         }}
                         register={register}
                         errors={errors}
                     />
                     <Input
-                        containerClass="w-full"
+                        containerClass="w-full pb-0"
                         labelClass="pl-3"
                         inputClass="w-full p-3"
                         placeholder="Please enter your username"
@@ -66,16 +69,14 @@ const SignUp = () => {
                         id="username"
                         label="Username"
                         validation={{
-                            required: 'Field is compulsory', validate: (value) => {
-                                if (!/^[0-9]*$/.test(value)) return 'Format invalid. Vă rugăm să introduceți numai cifre';
-                            },
+                            required: 'Field is compulsory',
                             minLength: {
-                                value: 2,
-                                message: 'Name is too short'
+                                value: 3,
+                                message: 'Username is too short'
                             },
                             maxLength: {
                                 value: 50,
-                                message: 'Name is too long'
+                                message: 'Username is too long'
                             }
                         }}
                         register={register}
@@ -92,11 +93,13 @@ const SignUp = () => {
                             id="password"
                             label="Password"
                             validation={{
-                                required: 'Field is compulsory', validate: (value) => {
-                                    if (!/^[0-9]*$/.test(value)) return 'Format invalid. Vă rugăm să introduceți numai cifre';
+                                required: 'Field is compulsory',
+                                validate: {
+                                    passwordStructure: value => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{6,20}$/.test(value) ||
+                                        'Password needs to contain at least one uppercase letter, one lowercase letter, a number and a special character'
                                 },
                                 minLength: {
-                                    value: 2,
+                                    value: 6,
                                     message: 'Password is too short'
                                 },
                                 maxLength: {
@@ -118,21 +121,19 @@ const SignUp = () => {
                             label="Repeat password"
                             validation={{
                                 required: 'Field is compulsory', validate: (value) => {
-                                    if (!/^[0-9]*$/.test(value)) return 'Format invalid. Vă rugăm să introduceți numai cifre';
+                                    if (watch('password') !== value) {
+                                        return 'Passwords do not match';
+                                    }
                                 },
-                                minLength: {
-                                    value: 2,
-                                    message: 'Password is too short'
-                                },
-                                maxLength: {
-                                    value: 50,
-                                    message: 'Password is too long'
-                                }
                             }}
                             register={register}
                             errors={errors}
                         />
                     </fieldset>
+
+                    <div className='inline flex justify-center'>
+                        <p>Already have an account? </p> <Link to='/sign-in' className='ml-2 underline'> Sign in</Link>
+                    </div>
 
                     <fieldset className="mt-4">
                         <Checkbox

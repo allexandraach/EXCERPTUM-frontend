@@ -42,17 +42,16 @@ export function TopNavbar({ children, navLinks }) {
             justify-between
             md:px-32 
             px-4
-            relative
+            relativ
             z-30
             items-center
             bg-chestnut_brown
             text-soft_beige
-            
             shadow-lg
             h-14
             `}>
 
-        <Link to='/' className='text-3xl font-[Satisfy] ml-2 mt-1.5'>
+        <Link to='/' className='text-3xl font-satisfy ml-2 mt-1.5'>
           Excerptum
         </Link>
 
