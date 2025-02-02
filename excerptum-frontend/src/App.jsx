@@ -6,8 +6,9 @@ import { Navbar } from './ComponentUtils/Navbar/Navbar';
 import Home from './Pages/Home';
 import Footer from './Pages/Footer';
 
-import SignUp from './Pages/SignUp';
-import SignIn from './Pages/SignIn';
+import SignUp from './Pages/Auth/SignUp';
+import SignIn from './Pages/Auth/SignIn';
+import ForgotPassword from './Pages/Auth/ForgotPassword';
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className='min-h-screen relative grid grid-rows-[3.5rem,1fr,auto]'>
+      <div className='min-h-screen relative grid grid-rows-[3.5rem,auto,8rem]'>
         <NavbarWrapper />
         <main>
           <Routes>
@@ -45,6 +46,10 @@ function App() {
             <Route
               path='/sign-up'
               element={<SignUp />}
+            />
+            <Route
+              path='/forgot-password'
+              element={<ForgotPassword />}
             />
           </Routes>
         </main>

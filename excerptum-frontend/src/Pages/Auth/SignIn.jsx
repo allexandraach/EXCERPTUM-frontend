@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 import { Helmet } from 'react-helmet';
 import { ToastContainer, toast } from 'react-toastify';
 
-import { Container } from '../ComponentUtils/BoxComponents/Container';
-import { Input } from '../ComponentUtils/InputsComponents/Input';
+import { Container } from '../../ComponentUtils/BoxComponents/Container';
+import { Input } from '../../ComponentUtils/InputsComponents/Input';
 
 const SignIn = () => {
 
