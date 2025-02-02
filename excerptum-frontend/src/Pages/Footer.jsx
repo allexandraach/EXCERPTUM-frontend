@@ -3,30 +3,26 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
 
     return (
-        <footer className='pl-6 md:px-32 w-full bg-chestnut_brown flex shadow-lg items-center justify-between text-soft_beige opacity-90 h-32 absolute bottom-0'>
-            <div className='flex flex-col'>
-                <Link
-                    className='pb-2 hover:underline text-sm'
-                    to='/about'
-                >
-                    About
-                </Link>
-                <Link
-                    className='pb-2 hover:underline text-sm'
-                    to='/policies/terms-and-conditions'
-                >
-                    Terms and Conditions
-                </Link>
-                <Link
-                    className='pb-2 hover:underline text-sm'
-                    to='/policies/privacy'
-                >
-                    Privacy
-                </Link>
+        <footer className="w-full bg-chestnut_brown text-soft_beige shadow-lg py-6 px-6 md:px-32 items-center">
+            <div className='flex justify-between items-center'>
+                <div className="flex flex-col gap-2">
+                    <Link className="hover:underline text-sm" to="/about">
+                        About
+                    </Link>
+                    <Link className="hover:underline text-sm" to="/policies/terms-and-conditions">
+                        Terms and Conditions
+                    </Link>
+                    <Link className="hover:underline text-sm" to="/policies/privacy">
+                        Privacy
+                    </Link>
+                </div>
+
+                <p className="text-sm text-wrap">
+                    &copy; {new Date().getFullYear()} Excerptum | All rights reserved
+                </p>
             </div>
-            <p className='ml-8 md:ml-0 text-sm text-wrap'> &copy; Excerptum 2025 | All rights reserved </p>
         </footer>
-    )
+    );
 }
 
 export default Footer;

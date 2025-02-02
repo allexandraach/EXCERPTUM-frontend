@@ -2,7 +2,7 @@ import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route, BrowserRouter, useLocation } from 'react-router-dom';
 
-import { TopNavbar } from './ComponentUtils/Navbar/TopNavbar';
+import { Navbar } from './ComponentUtils/Navbar/Navbar';
 import Home from './Pages/Home';
 import Footer from './Pages/Footer';
 
@@ -24,12 +24,12 @@ function App() {
 
     const showNavbar = location.pathname !== '/'; // Don't show navbar on the Home page
 
-    return showNavbar ? <TopNavbar navLinks={navLinks} /> : null;
+    return showNavbar ? <Navbar navLinks={navLinks} /> : null;
   };
 
   return (
-    <div className='App min-h-screen relative'>
-      <BrowserRouter>
+    <BrowserRouter>
+      <div className='min-h-screen relative grid grid-rows-[3.5rem,1fr,auto]'>
         <NavbarWrapper />
         <main>
           <Routes>
@@ -49,8 +49,8 @@ function App() {
           </Routes>
         </main>
         <Footer />
-      </BrowserRouter>
-    </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

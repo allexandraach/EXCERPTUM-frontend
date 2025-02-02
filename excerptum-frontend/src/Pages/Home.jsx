@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { FaMapPin } from "react-icons/fa6";
-// import { isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 import { Container } from '../ComponentUtils/BoxComponents/Container';
 
 const Home = () => {
 
-    let isMobile = true;
-
     return (
-        <Container extraClass='m-0 p-0 md:px-0 md:mx-0'>
+        <Container extraClass='mx-0 px-0 md:px-0 md:mx-0'>
             <Helmet>
                 <title>Excerptum | Home</title>
                 <meta name='description' content='Excerptum | Home' />
@@ -85,13 +83,13 @@ const Home = () => {
             </section> */}
 
 
-            <section className="relative p-6 flex flex-col justify-center items-center max-w-lg mx-auto bg-[#fffae5] shadow-2xl">
-                {/* Pin icons */}
-                <div className="absolute -top-4 flex w-full justify-between">
+            {/* <section className="relative p-6 flex flex-col justify-center items-center max-w-lg mx-auto bg-[#fffae5] shadow-2xl"> */}
+            {/* Pin icons */}
+            {/* <div className="absolute -top-4 flex w-full justify-between">
                     <FaMapPin size={28} className="text-red-500 rotate-12" />
                     <FaMapPin size={28} className="text-red-500 -rotate-12" />
                 </div>
-            </section>
+            </section> */}
             {/* Sticky note content */}
             {/* <p className="text-lg md:text-xl mb-4 text-center">Organize ideas into collections of your choice.</p>
             <p className="text-lg md:text-xl text-center">Share them with your friends.</p> */}

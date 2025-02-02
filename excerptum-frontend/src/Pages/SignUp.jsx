@@ -19,11 +19,11 @@ const SignUp = () => {
     });
 
     return (
-        <Container extraClass="min-h-screen py-10 flex justify-center items-center  bg-cover bg-center bg-[url('https://img.freepik.com/premium-photo/collection-old-newspapers-objects_154730-277.jpg?w=1380')]">
+        <Container extraClass="flex justify-center items-center  bg-cover bg-center bg-[url('https://img.freepik.com/premium-photo/collection-old-newspapers-objects_154730-277.jpg?w=1380')]">
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <Helmet>
-                <title>Excerptum | SignUp</title>
-                <meta name='description' content='Excerptum | SignUp' />
+                <title>Excerptum | Sign Up</title>
+                <meta name='description' content='Excerptum | Sign Up' />
             </Helmet>
 
             <form className="relative flex w-full md:w-1/2 lg:w-1/3 rounded-md p-8 bg-soft_beige bg-opacity-80 shadow-lg">
@@ -109,6 +109,7 @@ const SignUp = () => {
                             }}
                             register={register}
                             errors={errors}
+                            showPasswordClass='top-0 right-2'
                         />
                         <Input
                             containerClass="w-full"
@@ -128,6 +129,7 @@ const SignUp = () => {
                             }}
                             register={register}
                             errors={errors}
+                            showPasswordClass='top-0 right-2'
                         />
                     </fieldset>
 
