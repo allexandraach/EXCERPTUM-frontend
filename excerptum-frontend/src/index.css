@@ -16,6 +16,22 @@ code {
     monospace;
 }
 
+@layer utilities {
+  .stamp-border {
+    --radius: 8px;
+    background-image:
+      radial-gradient(var(--radius), transparent 98%, #a10872),
+      linear-gradient(#a10872 0 0);
+    background-repeat: round, no-repeat;
+    background-position:
+      calc(var(--radius) * -1.5) calc(var(--radius) * -1.5),
+      50%;
+    background-size:
+      calc(var(--radius) * 3) calc(var(--radius) * 3),
+      calc(100% - var(--radius) * 3) calc(100% - var(--radius) * 3);
+  }
+}
+
 .btn-press-active {
   background-color: rgb(0 186 68) !important;
   color: white !important;

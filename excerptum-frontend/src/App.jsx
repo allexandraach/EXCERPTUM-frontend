@@ -9,6 +9,7 @@ import Footer from './Pages/Footer';
 import SignUp from './Pages/Auth/SignUp';
 import SignIn from './Pages/Auth/SignIn';
 import ForgotPassword from './Pages/Auth/ForgotPassword';
+import HomeHeader from './ComponentUtils/PageComponents/Home/HomeHeader';
 
 function App() {
 
@@ -25,12 +26,12 @@ function App() {
 
     const showNavbar = location.pathname !== '/'; // Don't show navbar on the Home page
 
-    return showNavbar ? <Navbar navLinks={navLinks} /> : null;
+    return showNavbar ? <Navbar navLinks={navLinks} /> : <HomeHeader />;
   };
 
   return (
     <BrowserRouter>
-      <div className='min-h-screen relative grid grid-rows-[3.5rem,auto,8rem]'>
+      <div className='min-h-screen relative grid grid-rows-[auto,auto,8rem]'>
         <NavbarWrapper />
         <main>
           <Routes>

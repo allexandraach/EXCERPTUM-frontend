@@ -43,12 +43,22 @@ export default {
       },
       animation: {
         blinking: 'blinking 1s infinite',
+        fadeIn: "fadeIn 1s ease-out",
+        slideIn: "slideIn 1s ease-out",
       },
       keyframes: {
         blinking: {
           '0%': { opacity: 1 },
           '50%': { opacity: 0 },
           '100%': { opacity: 1 },
+        },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        slideIn: {
+          "0%": { transform: "translateX(50px)", opacity: 0 },
+          "100%": { transform: "translateX(0)", opacity: 1 },
         },
       },
     },

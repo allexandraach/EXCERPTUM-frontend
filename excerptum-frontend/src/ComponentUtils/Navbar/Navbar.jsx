@@ -35,7 +35,7 @@ export function Navbar({ children, navLinks }) {
   });
 
   return (
-    <header className='sticky z-50'>
+    <header className='sticky'>
       <div className={`
           flex
           flex-row
