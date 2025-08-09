@@ -21,17 +21,14 @@ function App() {
   ];
 
   const NavbarWrapper = () => {
-
     const location = useLocation();
-
     const showNavbar = location.pathname !== '/'; // Don't show navbar on the Home page
-
     return showNavbar ? <Navbar navLinks={navLinks} /> : <HomeHeader />;
   };
 
   return (
     <BrowserRouter>
-      <div className='min-h-screen relative grid grid-rows-[auto,auto,8rem]'>
+      <div className='min-h-screen relative grid grid-rows-[auto,auto,10rem]'>
         <NavbarWrapper />
         <main>
           <Routes>

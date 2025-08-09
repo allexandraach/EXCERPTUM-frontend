@@ -19,28 +19,28 @@ const SignUp = () => {
     });
 
     return (
-        <Container extraClass="flex justify-center items-center  bg-cover bg-center bg-[url('https://img.freepik.com/premium-photo/collection-old-newspapers-objects_154730-277.jpg?w=1380')]">
-            <div className="absolute inset-0 bg-black opacity-50"></div>
+        <Container extraClass='flex justify-center items-center bg-cover bg-center bg-[url("https://img.freepik.com/premium-photo/collection-old-newspapers-objects_154730-277.jpg?w=1380")]'>
+            <div className='absolute inset-0 bg-black opacity-50'></div>
             <Helmet>
                 <title>Excerptum | Sign Up</title>
                 <meta name='description' content='Excerptum | Sign Up' />
             </Helmet>
 
-            <form className="relative flex w-full md:w-1/2 lg:w-1/3 rounded-md p-8 bg-soft_beige bg-opacity-80 shadow-lg">
-                <h1 className="absolute -top-4 left-1/2 transform -translate-x-1/2 flex items-center space-x-2 bg-magenta text-white px-4 py-2 rounded-md shadow-md">
-                    <span className="font-serif text-lg">Sign Up</span>
+            <form className='relative flex w-full p-8 rounded-md shadow-lg md:w-1/2 lg:w-1/3 bg-soft_beige bg-opacity-80'>
+                <h1 className='absolute flex items-center px-4 py-2 space-x-2 text-white transform -translate-x-1/2 rounded-md shadow-md -top-4 left-1/2 bg-magenta'>
+                    <span className='font-serif text-lg'>Sign Up</span>
                 </h1>
 
-                <div className="flex flex-col w-full space-y-4">
+                <div className='flex flex-col w-full space-y-4'>
                     <Input
-                        containerClass="w-full pb-0"
-                        labelClass="pl-3"
-                        inputClass="w-full p-3"
-                        placeholder="Please enter your e-mail address"
-                        type="email"
-                        name="email"
-                        id="email"
-                        label="E-mail"
+                        containerClass='w-full pb-0'
+                        labelClass='pl-3'
+                        inputClass='w-full p-3'
+                        placeholder='Please enter your e-mail address'
+                        type='email'
+                        name='email'
+                        id='email'
+                        label='E-mail'
                         validation={{
                             required: 'Field is compulsory',
                             pattern: {
@@ -60,14 +60,14 @@ const SignUp = () => {
                         errors={errors}
                     />
                     <Input
-                        containerClass="w-full pb-0"
-                        labelClass="pl-3"
-                        inputClass="w-full p-3"
-                        placeholder="Please enter your username"
-                        type="text"
-                        name="username"
-                        id="username"
-                        label="Username"
+                        containerClass='w-full pb-0'
+                        labelClass='pl-3'
+                        inputClass='w-full p-3'
+                        placeholder='Please enter your username'
+                        type='text'
+                        name='username'
+                        id='username'
+                        label='Username'
                         validation={{
                             required: 'Field is compulsory',
                             minLength: {
@@ -84,18 +84,18 @@ const SignUp = () => {
                     />
                     <fieldset>
                         <Input
-                            containerClass="w-full"
-                            labelClass="pl-3"
-                            inputClass="w-full p-3"
-                            placeholder="Please enter your password"
-                            type="password"
-                            name="password"
-                            id="password"
-                            label="Password"
+                            containerClass='w-full'
+                            labelClass='pl-3'
+                            inputClass='w-full p-3'
+                            placeholder='Please enter your password'
+                            type='password'
+                            name='password'
+                            id='password'
+                            label='Password'
                             validation={{
                                 required: 'Field is compulsory',
                                 validate: {
-                                    passwordStructure: value => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{6,20}$/.test(value) ||
+                                    passwordStructure: value => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?':{}|<>])[A-Za-z\d!@#$%^&*(),.?':{}|<>]{6,20}$/.test(value) ||
                                         'Password needs to contain at least one uppercase letter, one lowercase letter, a number and a special character'
                                 },
                                 minLength: {
@@ -112,14 +112,14 @@ const SignUp = () => {
                             showPasswordClass='top-0 right-2'
                         />
                         <Input
-                            containerClass="w-full"
-                            labelClass="pl-3"
-                            inputClass="w-full p-3"
-                            placeholder="Please enter your password again"
-                            type="password"
-                            name="repeat-password"
-                            id="repeat-password"
-                            label="Repeat password"
+                            containerClass='w-full'
+                            labelClass='pl-3'
+                            inputClass='w-full p-3'
+                            placeholder='Please enter your password again'
+                            type='password'
+                            name='repeat-password'
+                            id='repeat-password'
+                            label='Repeat password'
                             validation={{
                                 required: 'Field is compulsory', validate: (value) => {
                                     if (watch('password') !== value) {
@@ -133,15 +133,15 @@ const SignUp = () => {
                         />
                     </fieldset>
 
-                    <div className='inline flex justify-center'>
+                    <div className='flex justify-center inline'>
                         <p>Already have an account? </p> <Link to='/sign-in' className='ml-2 underline'> Sign in</Link>
                     </div>
 
-                    <fieldset className="mt-4">
+                    <fieldset className='mt-4'>
                         <Checkbox
-                            id="ToS"
-                            keyText="ToS"
-                            name="ToS"
+                            id='ToS'
+                            keyText='ToS'
+                            name='ToS'
                             label='I have read and agreed with the'
                             link='/policies/terms-and-conditions'
                             linkText='Terms and Conditions'
@@ -151,9 +151,9 @@ const SignUp = () => {
                             errors={errors}
                         />
                         <Checkbox
-                            id="GDPR"
-                            keyText="GDPR"
-                            name="GDPR"
+                            id='GDPR'
+                            keyText='GDPR'
+                            name='GDPR'
                             label='I have read and agreed with the'
                             link='/policies/privacy'
                             linkText='Privacy Policy'
@@ -163,9 +163,9 @@ const SignUp = () => {
                             errors={errors}
                         />
                         <Checkbox
-                            id="newsletter"
-                            keyText="newsletter"
-                            name="newsletter"
+                            id='newsletter'
+                            keyText='newsletter'
+                            name='newsletter'
                             label='I want to subscribe to the newsletter'
                             value={true}
                             register={register}
@@ -174,9 +174,9 @@ const SignUp = () => {
                     </fieldset>
 
                     <input
-                        type="submit"
-                        value="Register"
-                        className="px-4 py-2 w-1/3 text-lg self-center rounded-md text-white bg-magenta hover:bg-dark_magenta transition duration-300 border-dark_magenta shadow-lg cursor-pointer"
+                        type='submit'
+                        value='Register'
+                        className='self-center w-1/3 px-4 py-2 text-lg text-white transition duration-300 rounded-md shadow-lg cursor-pointer bg-magenta hover:bg-dark_magenta border-dark_magenta'
                     />
                 </div>
             </form>

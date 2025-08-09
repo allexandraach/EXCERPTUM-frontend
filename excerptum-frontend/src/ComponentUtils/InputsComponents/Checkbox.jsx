@@ -1,5 +1,5 @@
-import { MdErrorOutline } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
+import { MdErrorOutline } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 
 export function Checkbox({
   containerClass,
@@ -35,14 +35,14 @@ export function Checkbox({
         {link &&
           <button
             type='button'
-            className="ml-1 underline"
+            className='ml-1 underline'
             onClick={() => navigate(link)}>
             {linkText}
           </button>
         }
       </label>
       {errors?.[name] &&
-        <div className="flex pl-10">
+        <div className='flex pl-10'>
           <MdErrorOutline
             size={20}
           />

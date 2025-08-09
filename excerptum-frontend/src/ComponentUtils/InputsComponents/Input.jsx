@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { MdErrorOutline } from "react-icons/md";
-import { ShowPassword } from "./ShowPassword";
+import { useState } from 'react';
+import { MdErrorOutline } from 'react-icons/md';
+import { ShowPassword } from './ShowPassword';
 
 export function Input({
   type,
@@ -26,7 +26,7 @@ export function Input({
   return (
     <div className={`${containerClass} inputWrapper  flex flex-col p-2`}>
       <label htmlFor={id} className={labelClass}>{label}</label>
-      <div className="relative">
+      <div className='relative'>
         <input
           {...register(name, validation)}
           value={value}
@@ -48,10 +48,10 @@ export function Input({
           />}
       </div>
       {errors?.[name] &&
-        <div className="flex pl-2">
+        <div className='flex pl-2'>
           <MdErrorOutline
             size={20}
-            className="flex-shrink-0"
+            className='flex-shrink-0'
           />
           <p className='ml-2 text-sm'>{errors[name].message}</p>
         </div>

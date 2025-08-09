@@ -21,19 +21,17 @@ export default {
         // nav bg color
         chestnut_brown: '#653434',
         // #65344d
-        // bav font color
+        // nav font color
         soft_beige: '#fbefdf',
+        // paragraph text color
+        dark_brown: '#381D1D',
         magenta: '#a10872',
         dark_magenta: '#80065b',
         dark_magenta_hover: '#70054f',
         wine: '#65344d',
-        gray_shadow: '#a0a1a2',
-        gray_hover: '#848a94',
-        modal_bg: '#0303032e',
       },
       backgroundImage: {
-        home_hero_img_1: "url('./src/images/home/hero_img_1.png')",
-        home_hero_img_2: "url('./src/images/home/hero_img_2.png')"
+        home_hero_img_1: 'url("/public/images/home/hero_img_1.webp")'
       },
       fontFamily: {
         satisfy: ['Satisfy', 'cursive']
@@ -43,8 +41,8 @@ export default {
       },
       animation: {
         blinking: 'blinking 1s infinite',
-        fadeIn: "fadeIn 1s ease-out",
-        slideIn: "slideIn 1s ease-out",
+        fadeIn: 'fadeIn 1s ease-out',
+        slideIn: 'slideIn 1s ease-out',
       },
       keyframes: {
         blinking: {
@@ -53,12 +51,12 @@ export default {
           '100%': { opacity: 1 },
         },
         fadeIn: {
-          "0%": { opacity: 0 },
-          "100%": { opacity: 1 },
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
         },
         slideIn: {
-          "0%": { transform: "translateX(50px)", opacity: 0 },
-          "100%": { transform: "translateX(0)", opacity: 1 },
+          '0%': { transform: 'translateX(50px)', opacity: 0 },
+          '100%': { transform: 'translateX(0)', opacity: 1 },
         },
       },
     },

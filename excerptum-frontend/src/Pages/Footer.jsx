@@ -1,25 +1,53 @@
 import { Link } from 'react-router-dom';
+import { RiFacebookBoxFill, RiInstagramFill, RiLinkedinBoxFill, RiTiktokFill } from 'react-icons/ri';
 
 const Footer = () => {
 
     return (
-        <footer className="w-full bg-chestnut_brown text-soft_beige shadow-lg py-6 px-6 md:px-32 items-center">
-            <div className='flex justify-between items-center'>
-                <div className="flex flex-col gap-2">
-                    <Link className="hover:underline text-sm" to="/about">
+        <footer className='items-center w-full py-6 shadow-lg bg-chestnut_brown text-soft_beige'>
+            <div className='flex items-center justify-between'>
+                <div className='flex flex-col items-start gap-2 px-4 md:px-36'>
+                    <Link className='text-sm hover:underline' to='/about'>
                         About
                     </Link>
-                    <Link className="hover:underline text-sm" to="/policies/terms-and-conditions">
+                    <Link className='text-sm hover:underline' to='/policies/terms-and-conditions'>
                         Terms and Conditions
                     </Link>
-                    <Link className="hover:underline text-sm" to="/policies/privacy">
-                        Privacy
+                    <Link className='text-sm hover:underline' to='/policies/privacy'>
+                        Privacy Policy
+                    </Link>
+                    <Link className='text-sm hover:underline' to='/policies/cookies'>
+                        Cookies Policy
                     </Link>
                 </div>
 
-                <p className="text-sm text-wrap">
-                    &copy; {new Date().getFullYear()} Excerptum | All rights reserved
-                </p>
+                <div className='flex flex-col items-end gap-2 px-4 md:items-center md:px-24'>
+                    <div className='flex gap-4'>
+                        <a href='https://www.facebook.com' target='_blank'>
+                            <RiFacebookBoxFill
+                                size={34}
+                            />
+                        </a>
+                        <a href='https://www.instagram.com' target='_blank'>
+                            <RiInstagramFill
+                                size={34}
+                            />
+                        </a>
+                        <a href='https://www.linkedin.com' target='_blank'>
+                            <RiLinkedinBoxFill
+                                size={34}
+                            />
+                        </a>
+                        <a href='https://www.tiktok.com' target='_blank'>
+                            <RiTiktokFill
+                                size={34}
+                            />
+                        </a>
+                    </div>
+                    <p className='text-sm text-right text-wrap'>
+                        &copy; {new Date().getFullYear()} Excerptum | All rights reserved
+                    </p>
+                </div>
             </div>
         </footer>
     );
