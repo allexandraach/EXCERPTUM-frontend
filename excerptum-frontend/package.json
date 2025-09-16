@@ -26,7 +26,7 @@
   },
   "scripts": {
     "dev": "vite --mode test",
-    "build": "vite build --mode production --outDir dist/prod/front",
+    "build": "npx vite build --mode production --outDir dist/prod/front",
     "build-local": "vite build --mode local --outDir dist/local",
     "build-development": "vite build --mode development --outDir dist/dev/front",
     "build-production": "vite build --mode production --outDir dist/prod/front",
