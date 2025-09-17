@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 // import { GiBookmark } from 'react-icons/gi';
 import { Container } from '../ComponentUtils/BoxComponents/Container';
 import StampCard from '../ComponentUtils/PageComponents/Home/StampCard';

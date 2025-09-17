@@ -31,7 +31,7 @@ export default {
         wine: '#65344d',
       },
       backgroundImage: {
-        home_hero_img_1: 'url("/public/images/home/hero_img_1.webp")'
+        home_hero_img_1: 'url("/images/home/hero_img_1.webp")'
       },
       fontFamily: {
         satisfy: ['Satisfy', 'cursive']

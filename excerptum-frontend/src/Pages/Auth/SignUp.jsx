@@ -1,22 +1,66 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
-
+import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { useAuth } from '../../app/context/Auth.context';
 import { Container } from '../../ComponentUtils/BoxComponents/Container';
 import { Input } from '../../ComponentUtils/InputsComponents/Input';
 import { Checkbox } from '../../ComponentUtils/InputsComponents/Checkbox';
 
 const SignUp = () => {
 
+    const navigate = useNavigate();
+
+    const {
+        isLoading,
+        success,
+        setSuccess,
+        error,
+        setError,
+        registerUser
+    } = useAuth();
+
     const {
         register,
         handleSubmit,
         formState: { errors },
-        watch
+        watch,
+        trigger,
     } = useForm({
         mode: 'onChange' // Enables validation as you type
     });
+
+    const password = watch('password');
+    const registeredRef = useRef(false);
+
+    useEffect(() => {
+        if (password?.length > 0) trigger('confirmPassword');
+    }, [password]);
+
+    useEffect(() => {
+        if (success) {
+            registeredRef.current = true;
+            setSuccess('');
+            navigate('/account/created');
+        }
+    }, [success]);
+
+    useEffect(() => {
+        if (error) {
+            toast.error(error, {
+                onClose: () => {
+                    setError(false);
+                    setSuccess('');
+                },
+            });
+        }
+    }, [error]);
+
+    const handleRegister = async (data) => {
+        await registerUser(data);
+    };
 
     return (
         <Container extraClass='flex justify-center items-center bg-cover bg-center bg-[url("https://img.freepik.com/premium-photo/collection-old-newspapers-objects_154730-277.jpg?w=1380")]'>
@@ -25,12 +69,19 @@ const SignUp = () => {
                 <title>Excerptum | Sign Up</title>
                 <meta name='description' content='Excerptum | Sign Up' />
             </Helmet>
-
-            <form className='relative flex w-full p-8 rounded-md shadow-lg md:w-1/2 lg:w-1/3 bg-soft_beige bg-opacity-80'>
+            {isLoading && (
+                <div className='fixed inset-0 flex items-center justify-center bg-white bg-opacity-60'>
+                    <AiOutlineLoading3Quarters
+                        size={50}
+                        color='rgb(249, 115, 22)'
+                        className='animate-spin'
+                    />
+                </div>
+            )}
+            <form onSubmit={handleSubmit(handleRegister)} className='relative flex w-full p-8 rounded-md shadow-lg md:w-1/2 lg:w-1/3 bg-soft_beige bg-opacity-80'>
                 <h1 className='absolute flex items-center px-4 py-2 space-x-2 text-white transform -translate-x-1/2 rounded-md shadow-md -top-4 left-1/2 bg-magenta'>
                     <span className='font-serif text-lg'>Sign Up</span>
                 </h1>
-
                 <div className='flex flex-col w-full space-y-4'>
                     <Input
                         containerClass='w-full pb-0'
@@ -132,11 +183,9 @@ const SignUp = () => {
                             showPasswordClass='top-0 right-2'
                         />
                     </fieldset>
-
                     <div className='flex justify-center inline'>
                         <p>Already have an account? </p> <Link to='/sign-in' className='ml-2 underline'> Sign in</Link>
                     </div>
-
                     <fieldset className='mt-4'>
                         <Checkbox
                             id='ToS'

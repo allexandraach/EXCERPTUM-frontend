@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
 
 import { Container } from '../../ComponentUtils/BoxComponents/Container';
@@ -91,7 +91,8 @@ const SignIn = () => {
                     </fieldset>
 
                     <div className='flex justify-center inline'>
-                        <p>Do not have an account? </p> <Link to='/sign-up' className='ml-2 underline'> Sign up</Link>
+                        <p>Do not have an account? </p>
+                        <Link to='/sign-up' className='ml-2 underline'> Sign up</Link>
                     </div>
 
                     <div className='flex justify-center inline'>

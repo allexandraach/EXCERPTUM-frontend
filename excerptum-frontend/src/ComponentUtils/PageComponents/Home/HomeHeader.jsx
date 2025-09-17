@@ -32,7 +32,7 @@ const HomeHeader = () => {
                 </div>
                 {/* Image for larger screens */}
                 <img
-                    src='public/images/home/hero_img_1.webp'
+                    src='/images/home/hero_img_1.webp'
                     alt='Open Book'
                     className='hidden md:block animate-slideIn'
                     height={500}
