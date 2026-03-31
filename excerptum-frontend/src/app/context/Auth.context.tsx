@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { jwtDecode } from 'jwt-decode';
 import axios from 'axios';
 // import { saveToStorage } from '../utilityFunctions/helpers/storageManagement/saveToStorage';
-import config from '../../Config/index.js';
+import config from '../../shared/lib/config/config.js';
 
 const backendURL = `${config.apiUrl}/auth`;
 

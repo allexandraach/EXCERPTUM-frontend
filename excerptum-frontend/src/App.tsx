@@ -3,14 +3,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route, BrowserRouter, useLocation, Navigate } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { ToastContainer } from 'react-toastify';
-import { Navbar } from './ComponentUtils/Navbar/Navbar.js';
-import Home from './Pages/Home.js';
-import Footer from './Pages/Footer.js';
-import SignUp from './Pages/Auth/SignUp.js';
-import SignIn from './Pages/Auth/SignIn.jsx';
-import ForgotPassword from './Pages/Auth/ForgotPassword.js';
-import HomeHeader from './ComponentUtils/PageComponents/Home/HomeHeader.js';
-import User from './Pages/User/User.js';
+import { Navbar } from './layout/Navbar.js';
+import Home from './features/home/Home.js';
+import Footer from './layout/Footer.js';
+import SignUp from './features/auth/components/SignUp.js';
+import SignIn from './features/auth/components/SignIn.jsx';
+import ForgotPassword from './features/auth/components//ForgotPassword.js';
+import HomeHeader from './features/home/components/HomeHeader.js';
+import User from './features/user/User.js';
 
 import { useAuth } from './app/context/Auth.context.js';
 
