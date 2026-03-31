@@ -1,20 +1,18 @@
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { Routes, Route, BrowserRouter, useLocation } from 'react-router-dom';
+import { Routes, Route, BrowserRouter, useLocation, Navigate } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { ToastContainer } from 'react-toastify';
+import { Navbar } from './ComponentUtils/Navbar/Navbar.js';
+import Home from './Pages/Home.js';
+import Footer from './Pages/Footer.js';
+import SignUp from './Pages/Auth/SignUp.js';
+import SignIn from './Pages/Auth/SignIn.jsx';
+import ForgotPassword from './Pages/Auth/ForgotPassword.js';
+import HomeHeader from './ComponentUtils/PageComponents/Home/HomeHeader.js';
+import User from './Pages/User/User.js';
 
-import { Navbar } from './ComponentUtils/Navbar/Navbar';
-import Home from './Pages/Home';
-import Footer from './Pages/Footer';
-
-import SignUp from './Pages/Auth/SignUp';
-import SignIn from './Pages/Auth/SignIn';
-import ForgotPassword from './Pages/Auth/ForgotPassword';
-import HomeHeader from './ComponentUtils/PageComponents/Home/HomeHeader';
-import User from './Pages/User/User';
-
-import { useAuth } from './app/context/Auth.context';
+import { useAuth } from './app/context/Auth.context.js';
 
 function App() {
 
@@ -39,7 +37,7 @@ function App() {
   };
 
 
-  function PrivateRoute({ isLoggedIn, children }) {
+  function PrivateRoute({ isLoggedIn, children }: { isLoggedIn: boolean, children: React.ReactNode }) {
     return isLoggedIn ? children : <Navigate to='/login' />;
   }
 

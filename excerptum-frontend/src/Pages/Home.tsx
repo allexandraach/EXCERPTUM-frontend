@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 // import { GiBookmark } from 'react-icons/gi';
-import { Container } from '../ComponentUtils/BoxComponents/Container';
-import StampCard from '../ComponentUtils/PageComponents/Home/StampCard';
-import NotebookCard from '../ComponentUtils/PageComponents/Home/NotebookCard';
+import { Container } from '../ComponentUtils/BoxComponents/Container.js';
+import StampCard from '../ComponentUtils/PageComponents/Home/StampCard.js';
+import NotebookCard from '../ComponentUtils/PageComponents/Home/NotebookCard.js';
 
 const Home = () => {
     return (

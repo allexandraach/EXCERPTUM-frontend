@@ -3,19 +3,24 @@ import { useForm } from 'react-hook-form';
 import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
 
-import { Container } from '../../ComponentUtils/BoxComponents/Container';
-import { Input } from '../../ComponentUtils/InputsComponents/Input';
+import { Container } from '../../ComponentUtils/BoxComponents/Container.js';
+import { Input } from '../../ComponentUtils/InputsComponents/Input.js';
 
 const ForgotPassword = () => {
-
     const {
         register,
         handleSubmit,
         formState: { errors },
         watch
-    } = useForm({
+    } = useForm<{ email: string }>({
         mode: 'onChange' // Enables validation as you type
     });
+
+    const onSubmit = (data: { email: string }) => {
+        // TODO: send recovery link request
+        console.log('forgot password form data', data);
+        toast.success('Recovery link sent if email exists');
+    };
 
     return (
         <Container extraClass='flex justify-center pt-0 items-center bg-cover bg-center bg-[url("https://img.freepik.com/premium-photo/collection-old-newspapers-objects_154730-277.jpg?w=1380")]'>
@@ -25,7 +30,7 @@ const ForgotPassword = () => {
                 <meta name='description' content='Excerptum | Forgot Password' />
             </Helmet>
 
-            <form className='relative flex p-8 rounded-md shadow-lg sm:flex-grow md:flex-none md:w-1/2 lg:w-1/3 bg-soft_beige bg-opacity-80'>
+            <form onSubmit={handleSubmit(onSubmit)} className='relative flex p-8 rounded-md shadow-lg sm:flex-grow md:flex-none md:w-1/2 lg:w-1/3 bg-soft_beige bg-opacity-80'>
                 <h1 className='absolute flex items-center px-4 py-2 space-x-2 text-white transform -translate-x-1/2 rounded-md shadow-md -top-4 left-1/2 bg-magenta'>
                     <span className='font-serif text-lg'>Forgot Password</span>
                 </h1>

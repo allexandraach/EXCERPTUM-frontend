@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
+import type { SubmitHandler } from 'react-hook-form';
 import { Helmet } from 'react-helmet-async';
 import { ToastContainer, toast } from 'react-toastify';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
@@ -8,6 +9,16 @@ import { useAuth } from '../../app/context/Auth.context';
 import { Container } from '../../ComponentUtils/BoxComponents/Container';
 import { Input } from '../../ComponentUtils/InputsComponents/Input';
 import { Checkbox } from '../../ComponentUtils/InputsComponents/Checkbox';
+
+interface SignUpFormData {
+    email: string;
+    username: string;
+    password: string;
+    'repeat-password': string;
+    ToS: boolean;
+    GDPR: boolean;
+    newsletter?: boolean;
+}
 
 const SignUp = () => {
 
@@ -28,7 +39,7 @@ const SignUp = () => {
         formState: { errors },
         watch,
         trigger,
-    } = useForm({
+    } = useForm<SignUpFormData>({
         mode: 'onChange' // Enables validation as you type
     });
 
@@ -36,13 +47,13 @@ const SignUp = () => {
     const registeredRef = useRef(false);
 
     useEffect(() => {
-        if (password?.length > 0) trigger('confirmPassword');
+        if (password?.length > 0) trigger('repeat-password');
     }, [password]);
 
     useEffect(() => {
         if (success) {
             registeredRef.current = true;
-            setSuccess('');
+            setSuccess(null);
             navigate('/account/created');
         }
     }, [success]);
@@ -51,14 +62,14 @@ const SignUp = () => {
         if (error) {
             toast.error(error, {
                 onClose: () => {
-                    setError(false);
-                    setSuccess('');
+                    setError(null);
+                    setSuccess(null);
                 },
             });
         }
     }, [error]);
 
-    const handleRegister = async (data) => {
+    const handleRegister: SubmitHandler<SignUpFormData> = async (data) => {
         await registerUser(data);
     };
 

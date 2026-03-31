@@ -1,6 +1,6 @@
 import { GiBookmarklet } from 'react-icons/gi';
 
-export default function StampCard({ title, text }) {
+export default function StampCard({ title, text }: { title: string; text: string }) {
     return (
         <div className='relative flex flex-col items-center flex-grow w-full md:w-1/3 lg:w-1/3 p-4 p-6 pb-12 text-soft_beige bg-magenta border-[10px] border-dark_magenta outline-[5px] outline-dashed outline-dark_magenta rounded-lg'>
             <div className='flex items-center gap-2'>

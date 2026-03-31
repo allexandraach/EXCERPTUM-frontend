@@ -1,6 +1,30 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MdErrorOutline } from 'react-icons/md';
-import { ShowPassword } from './ShowPassword';
+import { ShowPassword } from './ShowPassword.js';
+import type {
+  FieldErrors,
+  RegisterOptions,
+  UseFormRegister
+} from 'react-hook-form';
+
+interface InputProps {
+  type: string;
+  name: string;
+  id: string;
+  label: string;
+  placeholder?: string;
+  errors?: FieldErrors;
+  value?: string;
+  containerClass?: string;
+  labelClass?: string;
+  inputClass?: string;
+  defaultValue?: string;
+  pattern?: string | RegExp;
+  disabled?: boolean;
+  register: UseFormRegister<any>;
+  validation?: RegisterOptions<any>;
+  showPasswordClass?: string;
+}
 
 export function Input({
   type,
@@ -8,7 +32,7 @@ export function Input({
   id,
   label,
   placeholder,
-  errors = () => false,
+  errors,
   value,
   containerClass,
   labelClass,
@@ -19,9 +43,14 @@ export function Input({
   register,
   validation = {},
   showPasswordClass = ''
-}) {
+}: InputProps) {
 
   const [showPassword, setShowPassword] = useState(false);
+
+  const fieldError = errors?.[name as keyof typeof errors];
+  const fieldMessage = fieldError && typeof fieldError === 'object' && 'message' in fieldError
+    ? String((fieldError as { message?: unknown }).message)
+    : undefined;
 
   return (
     <div className={`${containerClass} inputWrapper  flex flex-col p-2`}>
@@ -37,7 +66,13 @@ export function Input({
           id={id}
           key={id}
           defaultValue={defaultValue || ''}
-          pattern={pattern || null}
+          pattern={
+            pattern
+              ? typeof pattern === 'string'
+                ? pattern
+                : pattern.source
+              : undefined
+          }
           disabled={disabled || false}
         />
         {type === 'password' &&
@@ -47,13 +82,13 @@ export function Input({
             showPasswordClass={showPasswordClass}
           />}
       </div>
-      {errors?.[name] &&
+      {fieldMessage &&
         <div className='flex pl-2'>
           <MdErrorOutline
             size={20}
             className='flex-shrink-0'
           />
-          <p className='ml-2 text-sm'>{errors[name].message}</p>
+          <p className='ml-2 text-sm'>{fieldMessage}</p>
         </div>
       }
     </div>

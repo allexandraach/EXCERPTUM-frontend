@@ -5,6 +5,10 @@ export const ShowPassword = ({
     showPassword,
     setShowPassword,
     showPasswordClass
+}: {
+    showPassword: boolean;
+    setShowPassword: (value: boolean) => void;
+    showPasswordClass: string;
 }) => {
     return (
         showPassword ? (

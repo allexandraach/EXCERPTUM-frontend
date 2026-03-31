@@ -1,4 +1,4 @@
-const NotebookCard = ({ length, paragraphs }) => {
+const NotebookCard = ({ length, paragraphs }: { length: number; paragraphs: string[] }) => {
     return (
         <div className='relative p-8 text-dark_brown bg-[#fdf8f2] rounded-se-3xl shadow-lg'>
             {/* Notebook lines */}

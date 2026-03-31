@@ -1,7 +1,24 @@
 import { MdErrorOutline } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
+import type { FieldError, FieldErrors, FieldValues, UseFormRegister, RegisterOptions, Path } from 'react-hook-form';
 
-export function Checkbox({
+interface CheckboxProps<T extends FieldValues> {
+  containerClass?: string;
+  labelClass?: string;
+  inputClass?: string;
+  keyText?: string;
+  id: string;
+  value?: boolean;
+  name: Path<T>;
+  label: string;
+  link?: string;
+  linkText?: string;
+  errors?: FieldErrors<T>;
+  validation?: RegisterOptions<T, Path<T>>;
+  register: UseFormRegister<T>;
+}
+
+export function Checkbox<T extends FieldValues>({
   containerClass,
   labelClass,
   inputClass,
@@ -12,10 +29,10 @@ export function Checkbox({
   label,
   link,
   linkText,
-  errors = false,
+  errors,
   validation = {},
   register
-}) {
+}: CheckboxProps<T>) {
 
   const navigate = useNavigate();
 
@@ -27,7 +44,7 @@ export function Checkbox({
         className={`${inputClass} border-gray-300 focus:border-gray-600 focus:ring-[#937082] text-wine px-2 mx-2 rounded-md`}
         name={name}
         id={id}
-        value={value}
+        value={value !== undefined ? String(value) : undefined}
         key={keyText}
       />
       <label className={`${labelClass} inline px-2`} htmlFor={id}>
@@ -46,7 +63,7 @@ export function Checkbox({
           <MdErrorOutline
             size={20}
           />
-          <p className={`ml-2 text-sm`}>{errors[name].message}</p>
+          <p className={`ml-2 text-sm`}>{(errors[name] as FieldError | undefined)?.message}</p>
         </div>
       }
     </div>

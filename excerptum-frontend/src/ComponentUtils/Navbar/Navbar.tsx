@@ -6,7 +6,7 @@ import { FaBookOpen } from 'react-icons/fa6';
 import { BiSolidBookAlt } from 'react-icons/bi';
 // import { useAuth } from '../../app/context/Auth.context';
 
-export function Navbar({ children, navLinks }) {
+export function Navbar({ children, navLinks }: { children?: React.ReactNode; navLinks: { page: string; link: string }[] }) {
 
   // const { isLoggedIn } = useAuth();
 
